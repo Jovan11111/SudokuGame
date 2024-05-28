@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .initial-number {
+            background-color: lightblue; 
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container, .number-buttons {
+            text-align: center;
+            margin: 20px;
+        }
+        .selected {
+            background-color: yellow;
+        }
+        .thick-top {
+            border-top: 3px solid #000;
+        }
+        .thick-left {
+            border-left: 3px solid #000;
+        }
+        .thick-bottom {
+            border-bottom: 3px solid #000;
+        }
+        .thick-right {
+            border-right: 3px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome</h1>
+    </div>
+    <div class="button-container">
+        <button id="easy-button" onclick="generateSudoku('easy')">Generate Easy</button>
+        <button id="medium-button" onclick="generateSudoku('medium')">Generate Medium</button>
+        <button id="hard-button" onclick="generateSudoku('hard')">Generate Hard</button>
+        <button id="check-button" onclick="checkSolution()" disabled>Check Solution</button>
+        <button id="solve-button" onclick="solveSudokuWithAnimation()">Let Algo Solve</button>
+    </div>
+    <div class="grid-container">
+        <table id="sudoku-grid"></table>
+    </div>
+    <div class="number-buttons"></div>
+    <script src="../script/script.js"></script>
+</body>
+</html>

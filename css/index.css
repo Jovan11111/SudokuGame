@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+}
+
+div{
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 400px;
+    margin: 12px;
+}

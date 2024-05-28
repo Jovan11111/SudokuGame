@@ -27,12 +27,13 @@ function generateEmptyGrid() {
 }
 
 function generateNumberButtons() {
-    const buttonContainer = document.querySelector('.number-buttons');
+    const buttonContainer = document.querySelector('.btn-group');
     buttonContainer.innerHTML = '';
     for (let num = 1; num <= 9; num++) {
         const button = document.createElement('button');
         button.textContent = num;
         button.onclick = () => placeNumber(num);
+        button.className = "btn btn-dark";
         buttonContainer.appendChild(button);
     }
 }
