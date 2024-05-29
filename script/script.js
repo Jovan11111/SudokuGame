@@ -34,6 +34,7 @@ function generateNumberButtons() {
         button.textContent = num;
         button.onclick = () => placeNumber(num);
         button.className = "btn btn-dark";
+        button.style = "font-size: 18px;"
         buttonContainer.appendChild(button);
     }
 }

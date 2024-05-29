@@ -1,4 +1,4 @@
-body {
+container-fluid {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +11,8 @@ table {
     margin: 20px 0;
 }
 .initial-number {
-    background-color: lightblue; 
+    background-color: rgb(124, 124, 124); 
+    color: black;
 }
 td {
     width: 40px;
@@ -20,6 +21,8 @@ td {
     text-align: center;
     font-size: 20px;
     cursor: pointer;
+    background-color: rgb(66, 66, 66);
+    color: gray;
 }
 .header {
     text-align: center;
@@ -30,7 +33,9 @@ td {
     margin: 20px;
 }
 .selected {
-    background-color: yellow;
+    background-color: orange;
+    opacity: 50%;
+    color: black;
 }
 .thick-top {
     border-top: 3px solid #000;
