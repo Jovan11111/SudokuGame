@@ -1,7 +1,7 @@
 let selectedCell = null;
 let isPlaying = false;
 let guessCounter = 0;
-let sleepTime = 200;
+let sleepTime = 20;
 
 function generateEmptyGrid() {
     const grid = document.getElementById('sudoku-grid');
@@ -151,7 +151,7 @@ function generateSudoku(difficulty) {
             break;
     }
     guessCounter = 0;
-    sleepTime = 200;
+    sleepTime = 20;
     fillGrid(puzzle);
     document.getElementById('check-button').disabled = true; // Disable check button initially
     isPlaying = true;
@@ -195,24 +195,17 @@ function checkSolution() {
         }
     }
 
-    // Check rows and columns
-    for (let i = 0; i < 9; i++) {
-        let rowSet = new Set();
-        let colSet = new Set();
-        for (let j = 0; j < 9; j++) {
-            // Check row
-            if (grid[i][j] !== 0 && rowSet.has(grid[i][j])) {
-                valid = false;
-                highlightMistake(i, j);
+    // check rows and columns
+    for(let i = 0; i < 9; i++){
+        for(let j = 0; j < 9; j++){
+            for(let m = 0; m < 9; m++){
+                for(let n = 0; n < 9; n++){
+                    if(grid[i][j] === grid[m][n] && (i === m || j === n) && !(i === m && j === n)){
+                        console.log(i + " " + j + " " + m + " " + n);
+                        highlightMistake(i, j);
+                    }
+                }
             }
-            rowSet.add(grid[i][j]);
-
-            // Check column
-            if (grid[j][i] !== 0 && colSet.has(grid[j][i])) {
-                valid = false;
-                highlightMistake(j, i);
-            }
-            colSet.add(grid[j][i]);
         }
     }
 
@@ -225,6 +218,7 @@ function checkSolution() {
                     let num = grid[row + i][col + j];
                     if (num !== 0 && subgridSet.has(num)) {
                         valid = false;
+                        console.log(row + i + "  " + col + j);
                         highlightMistake(row + i, col + j);
                     }
                     subgridSet.add(num);

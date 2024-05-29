@@ -7,12 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../script/script.js"></script>
+    <script src="../script/playSudoku.js"></script>
     <link rel="stylesheet" href="../css/playSudoku.css">
 </head>
 <body style="background-image: url(../img/background2.jpg);">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container d-flex justify-content-center">
-            <a class="navbar-brand" href="aboutSudoku.html">Play Sudoku</a>
+            <a class="navbar-brand" href="../index.html">Play Sudoku</a>
 
             <div class="navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -32,8 +33,6 @@
                 <button class="btn btn-dark" id="easy-button" onclick="generateSudoku('easy')">Generate Easy</button>
                 <button class="btn btn-dark" id="medium-button" onclick="generateSudoku('medium')">Generate Medium</button>
                 <button class="btn btn-dark" id="hard-button" onclick="generateSudoku('hard')">Generate Hard</button>
-                <button class="btn btn-dark" id="check-button" onclick="checkSolution()" disabled>Check Solution</button>
-                <button class="btn btn-dark" id="solve-button" onclick="solveSudokuWithAnimation()">Let Algo Solve</button>
             </div>
         </div>
         <div class="row">
