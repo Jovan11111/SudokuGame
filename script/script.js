@@ -1,7 +1,7 @@
 let selectedCell = null;
 let isPlaying = false;
 let guessCounter = 0;
-let sleepTime = 20;
+let sleepTime = 200;
 
 function generateEmptyGrid() {
     const grid = document.getElementById('sudoku-grid');
@@ -151,7 +151,7 @@ function generateSudoku(difficulty) {
             break;
     }
     guessCounter = 0;
-    sleepTime = 20;
+    sleepTime = 200;
     fillGrid(puzzle);
     document.getElementById('check-button').disabled = true; // Disable check button initially
     isPlaying = true;
@@ -269,8 +269,8 @@ async function solveWithAnimation(grid) {
                 for (let num = 1; num <= 9; num++) {
                     if (isSafe(grid, row, col, num)) {
                         guessCounter++;
-                        if(guessCounter % 100 == 0){
-                            sleepTime = Math.floor(sleepTime*0.9);
+                        if(guessCounter % 20 == 0){
+                            sleepTime = Math.floor(sleepTime*0.75);
                         }
                         grid[row][col] = num;
                         document.getElementById(`cell-${row}-${col}`).textContent = num;
@@ -288,9 +288,9 @@ async function solveWithAnimation(grid) {
             }
         }
     }
-    document.getElementById('check-button').disabled = false; // Disable check button initially
+    document.getElementById('check-button').disabled = false; 
     isPlaying = false;
-    document.getElementById('easy-button').disabled = false; // Disable generate buttons
+    document.getElementById('easy-button').disabled = false; 
     document.getElementById('medium-button').disabled = false;
     document.getElementById('hard-button').disabled = false;
     return true;
