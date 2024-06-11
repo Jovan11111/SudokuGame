@@ -14,7 +14,7 @@ The game is static, and deployed here: [https://sudokugame-ti0kv.kinsta.page/ind
 To run the Sudoku game locally, follow these steps:
 1. 
 ```
-git clone [https://github.com/yourusername/sudoku-game.git](https://github.com/Jovan11111/SudokuGame)
+git clone https://github.com/Jovan11111/SudokuGame
 ```
 2. Open index.html
 
